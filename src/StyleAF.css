@@ -1,0 +1,35 @@
+.root {
+    -fx-background-color: whitesmoke;
+}
+.label {
+    -fx-text-fill: black;
+
+}
+#H1 {
+    -fx-font-size: 18;
+    -fx-alignment: center;
+}
+.button {
+    -fx-pref-width: 125;
+    -fx-alignment: center;
+    -fx-background-radius: 5;
+    -fx-border-color: gray;
+    -fx-border-radius: 5;
+}
+#BackButton {
+    -fx-background-color: linear-gradient(whitesmoke,indianred,indianred,indianred, darkred);
+    -fx-pref-width: 75;
+    -fx-text-fill: whitesmoke;
+    -fx-border-color: linear-gradient(gray,indianred,indianred,indianred, darkred);
+}
+#ActionButton {
+    -fx-background-color: linear-gradient(whitesmoke,lightskyblue,lightskyblue,lightskyblue,skyblue,skyblue,dodgerblue);
+    -fx-text-fill: black;
+    -fx-border-color: linear-gradient(gray,gray,gray,gray,gray,gray,dodgerblue);
+
+}
+#SaveButton {
+    -fx-background-color: linear-gradient(whitesmoke,forestgreen,forestgreen, forestgreen, darkgreen);
+    -fx-border-color: linear-gradient(gray,gray,gray,gray,gray,gray,darkolivegreen);
+    -fx-text-fill: white;
+}
