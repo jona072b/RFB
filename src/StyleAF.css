@@ -10,7 +10,7 @@
     -fx-alignment: center;
 }
 .button {
-    -fx-pref-width: 125;
+    -fx-pref-width: 140;
     -fx-alignment: center;
     -fx-background-radius: 5;
     -fx-border-color: gray;

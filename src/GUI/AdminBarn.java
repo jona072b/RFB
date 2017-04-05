@@ -3,9 +3,6 @@ package GUI;
 import Controller.ConGUIModel;
 import Model.Barn;
 import Model.Forældre;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableListValue;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
@@ -55,6 +52,8 @@ public class AdminBarn {
         stue.setCellValueFactory(e -> e.getValue().stueProperty());
 
         tableView.getColumns().addAll(navn,stue);
+        navn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.7));
+        stue.prefWidthProperty().bind(tableView.widthProperty().multiply(0.29));
 
         tableView.getSelectionModel().setCellSelectionEnabled(false);
         ObservableList selectedCells = tableView.getSelectionModel().getSelectedCells();
