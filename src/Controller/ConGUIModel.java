@@ -23,6 +23,14 @@ public class ConGUIModel {
     public void addBarn(Barn b){
         Lister lister = new Lister();
         lister.addBarn(b);
-
     }
+
+    public ObservableList<Barn> getVenteliste (){
+       Lister lister = new Lister();
+       return lister.getVenteliste();
+    }
+
+
+
 }
+

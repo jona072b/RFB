@@ -52,6 +52,7 @@ public class AdminBarn {
         stue.setCellValueFactory(e -> e.getValue().stueProperty());
 
         tableView.getColumns().addAll(navn,stue);
+
         navn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.7));
         stue.prefWidthProperty().bind(tableView.widthProperty().multiply(0.29));
 

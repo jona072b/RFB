@@ -2,6 +2,7 @@ package Model;
 
 import DAO.Read;
 import DAO.Write;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.util.List;
@@ -26,9 +27,25 @@ public class Lister {
         toFile(list);
     }
 
-    public ObservableList<Barn> getBørn(){
-        return list;
+    public ObservableList<Barn> getBørn() {
+        ObservableList<Barn> indmeldt = FXCollections.observableArrayList();
+        for (Barn b: list){
+            if (!b.getStue().equalsIgnoreCase("Venteliste")) {
+                indmeldt.add(b);
+            }
+        }
+        return indmeldt;
     }
 
+    public ObservableList<Barn> getVenteliste() {
+        ObservableList <Barn> venteListe = FXCollections.observableArrayList();
+
+        for (Barn b: list){
+            if (b.getStue().equalsIgnoreCase("Venteliste")){
+                venteListe.add(b);
+            }
+        }
+        return venteListe;
+    }
 
 }

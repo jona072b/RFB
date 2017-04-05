@@ -10,11 +10,17 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class MainLogin extends Application {
     public static Stage window;
@@ -46,6 +52,10 @@ public class MainLogin extends Application {
             window.setScene(AdminBarn.buttonClicked());
         });
         Button BtnSeVent = new Button("Se venteliste");
+        BtnSeVent.setOnAction(e->{
+            window.setScene(SeVenteliste.buttonClicked());
+        });
+
         Button BtnVagt = new Button("Vagtplan");
         Button BtnSeAns = new Button("Se ansatte");
         Button BtnFakt = new Button("Fakturering");
@@ -61,6 +71,8 @@ public class MainLogin extends Application {
         BtnSeAns.setId("ActionButton");
         BtnFakt.setId("ActionButton");
         BtnLogUd.setId("BackButton");
+
+
 
         gridPane.addColumn(1,BtnOpr,BtnAdmins,BtnSeVent,BtnLogUd);
         gridPane.addColumn(2,BtnVagt,BtnSeAns,BtnFakt);
@@ -97,15 +109,26 @@ public class MainLogin extends Application {
 
         Label LBUser = new Label("Brugernavn");
         Label LBLPas = new Label("Adgangskode");
+        ImageView imv = new ImageView();
+        try {
+            Image imBørn = new Image(new FileInputStream("C:\\Users\\Jonathan\\IdeaProjects\\RFB\\Børn.png"));
+            imv.setImage(imBørn);
+            imv.setFitHeight(70);
+            imv.setFitWidth(70);
 
-        gridPane.addColumn(1,LBUser,LBLPas);
+        }
+        catch (FileNotFoundException e){
+            System.out.println("Idiot: " + e);
+        }
+
+
+
+        gridPane.addColumn(1,LBUser,LBLPas,imv);
         TextField TxtUser = new TextField();
         TxtUser.setPromptText("Brugernavn");
 
         PasswordField PS = new PasswordField();
         PS.setPromptText("Adgangskode");
-
-        gridPane.addColumn(2,TxtUser,PS);
 
         borderPane.setCenter(gridPane);
         gridPane.setAlignment(Pos.CENTER);
@@ -122,7 +145,8 @@ public class MainLogin extends Application {
         BtnAfslut.setId("BackButton");
 
         hBox.getChildren().addAll(BtnLogin,BtnAfslut);
-        gridPane.add(hBox,2,3);
+        //gridPane.add(hBox,2,3);
+        gridPane.addColumn(2,TxtUser,PS,hBox);
         Scene logInscene = new Scene(borderPane,400,200);
         logInscene.getStylesheets().add("StyleAF.css");
         return logInscene;
