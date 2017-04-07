@@ -36,11 +36,11 @@ public class AdminBarn {
         Label lblAdmin = new Label("Administrer Barn");
         lblAdmin.setId("H1");
         vbox.setAlignment(Pos.TOP_CENTER);
-        vbox.setPadding(new Insets(20,25,35,25));
+        vbox.setPadding(new Insets(20,20,35,20));
 
         ConGUIModel controller = new ConGUIModel();
         ObservableList<Barn> list = controller.getBørn();
-        HBox hBox = new HBox(10);
+        HBox hBox = new HBox(7);
         TableView tableView = new TableView();
         tableView.itemsProperty().setValue(list);
 
@@ -56,8 +56,7 @@ public class AdminBarn {
         navn.prefWidthProperty().bind(tableView.widthProperty().multiply(0.7));
         stue.prefWidthProperty().bind(tableView.widthProperty().multiply(0.29));
 
-        tableView.getSelectionModel().setCellSelectionEnabled(false);
-        ObservableList selectedCells = tableView.getSelectionModel().getSelectedCells();
+
 
 
         GridPane gp = new GridPane();
@@ -84,6 +83,9 @@ public class AdminBarn {
         tfEditable(false);
 
         //Barn b1 = null;
+        tableView.getSelectionModel().setCellSelectionEnabled(false);
+        ObservableList selectedCells = tableView.getSelectionModel().getSelectedCells();
+
 
         selectedCells.addListener(new ListChangeListener() {
             @Override

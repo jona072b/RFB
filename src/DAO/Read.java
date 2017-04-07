@@ -17,9 +17,6 @@ public class Read {
 
     public ObservableList<Barn> fromFile(){
         ObservableList<Barn> list = FXCollections.observableArrayList();
-        /*Barn b1 = new Barn("Børge","Larsen","123456-7859", "Rød", new Forældre("Peder Larsen","12345678"),new Forældre("Hanne Larsen","87654321"), "hanneogpeder@gmail.com");
-        Barn b2 = new Barn("Brian","Pedersen","652485-7857", "Blå", new Forældre("Lars Pedersen","12323432"),new Forældre("Birthe Pedersen","87634242341"), "birthoglars@gmail.com");
-        */
         try{
             Scanner fileScan = new Scanner(new File("børn.txt"));
             while(fileScan.hasNextLine()){

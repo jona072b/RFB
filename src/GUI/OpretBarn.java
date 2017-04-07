@@ -25,7 +25,7 @@ public class OpretBarn {
         headline.setId("H1");
 
         all.setAlignment(Pos.TOP_CENTER);
-        all.setPadding(new Insets(20,25,25,25));
+        all.setPadding(new Insets(20,15,25,15));
 
         GridPane gp = new GridPane();
         gp.setAlignment(Pos.CENTER);

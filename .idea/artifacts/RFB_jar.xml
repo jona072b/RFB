@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="RFB:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/RFB_jar</output-path>
+    <root id="archive" name="RFB.jar">
+      <element id="module-output" name="RFB" />
+    </root>
+  </artifact>
+</component>
